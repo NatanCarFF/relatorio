@@ -8,30 +8,44 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>📡 Monitoramento de Serviços</h1>
-        
-        <div class="form-group">
-            <label for="service">🔍 Escolha o serviço:</label>
-            <select id="service">
-                <option value="Internet">🌐 Internet</option>
-                <option value="Redes Sociais">📲 Redes Sociais</option>
-                <option value="Streaming">🎥 Streaming</option>
-            </select>
-        </div>
+    </header>
 
-        <div class="form-group">
-            <label for="issue">⚠️ Descrição do Problema:</label>
-            <input type="text" id="issue" placeholder="Informe o problema">
-        </div>
+    <main class="container">
+        <section class="form-section">
+            <h2>📢 Reporte um Problema</h2>
+            
+            <div class="form-group">
+                <label for="service">🔍 Escolha o serviço:</label>
+                <select id="service">
+                    <option value="Internet">🌐 Internet</option>
+                    <option value="Redes Sociais">📲 Redes Sociais</option>
+                    <option value="Streaming">🎥 Streaming</option>
+                    <option value="Jogos Online">🎮 Jogos Online</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <button onclick="reportIssue()">🚀 Reportar Problema</button>
-        </div>
+            <div class="form-group">
+                <label for="issue">⚠️ Descrição do Problema:</label>
+                <input type="text" id="issue" placeholder="Exemplo: Lentidão ou queda de conexão">
+            </div>
 
-        <div class="status-list" id="status-list">
-            <h3>📊 Status de Serviços</h3>
-        </div>
-    </div>
+            <div class="form-group">
+                <button onclick="reportIssue()">🚀 Enviar Relatório</button>
+            </div>
+        </section>
+
+        <section class="status-section">
+            <h2>📊 Status dos Serviços</h2>
+            <div class="status-list" id="status-list">
+                <p>🔎 Nenhum problema reportado até agora.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Monitoramento de Serviços - Criado por Natanael Carvalho</p>
+    </footer>
 </body>
 </html>
