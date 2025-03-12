@@ -27,10 +27,10 @@ function reportIssue() {
 // Função para exibir os relatórios na tela
 function displayReports() {
     const statusList = document.getElementById("status-list");
-    statusList.innerHTML = "<h2>📊 Status dos Serviços</h2>";
+    statusList.innerHTML = "";
 
     if (reports.length === 0) {
-        statusList.innerHTML += "<p>🔎 Nenhum problema reportado até agora.</p>";
+        statusList.innerHTML = "<p>🔎 Nenhum problema reportado até agora.</p>";
         return;
     }
 
