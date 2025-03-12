@@ -27,14 +27,14 @@ function reportIssue() {
 // Função para exibir os relatórios na tela
 function displayReports() {
     const statusList = document.getElementById("status-list");
-    statusList.innerHTML = "<h3>📊 Status de Serviços</h3>";
+    statusList.innerHTML = "<h2>📊 Status dos Serviços</h2>";
 
     if (reports.length === 0) {
-        statusList.innerHTML += "<p>Nenhum problema reportado até agora.</p>";
+        statusList.innerHTML += "<p>🔎 Nenhum problema reportado até agora.</p>";
         return;
     }
 
-    reports.forEach(report => {
+    reports.forEach((report, index) => {
         const reportElement = document.createElement("div");
         reportElement.classList.add("status-item");
 
@@ -42,10 +42,20 @@ function displayReports() {
             <span>🔹 Serviço: ${report.service}</span>
             <span>⚠️ Problema: ${report.issue}</span>
             <span>📅 Reportado em: ${report.timestamp}</span>
+            <button class="delete-btn" onclick="deleteReport(${index})">❌ Remover</button>
         `;
 
         statusList.appendChild(reportElement);
     });
+}
+
+// Função para remover um relatório específico
+function deleteReport(index) {
+    if (confirm("Tem certeza que deseja remover este relatório?")) {
+        reports.splice(index, 1);
+        localStorage.setItem("reports", JSON.stringify(reports));
+        displayReports();
+    }
 }
 
 // Carrega os relatórios ao iniciar a página
