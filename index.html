@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Monitoramento de Serviços</h1>
+        
+        <div class="form-group">
+            <label for="service">Escolha o serviço:</label>
+            <select id="service">
+                <option value="Internet">Internet</option>
+                <option value="Redes Sociais">Redes Sociais</option>
+                <option value="Streaming">Streaming</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="issue">Descrição do Problema:</label>
+            <input type="text" id="issue" placeholder="Informe o problema">
+        </div>
+
+        <div class="form-group">
+            <button onclick="reportIssue()">Reportar Problema</button>
+        </div>
+
+        <div class="status-list" id="status-list">
+            <h3>Status de Serviços</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
